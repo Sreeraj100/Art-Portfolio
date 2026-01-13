@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { X, ZoomIn, Layers, ChevronRight } from 'lucide-react';
+import { X, ChevronRight } from 'lucide-react';
 import styles from './PortraitGallery.module.css';
 
 // Extended Data Structure with Multiple Images aka "Details"
