@@ -1,12 +1,33 @@
+/**
+ * WORLD-CLASS HERO STYLES
+ * Premium, responsive, visually stunning
+ */
+
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    background: #000000;
+}
+
+/* Gradient overlay for depth */
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.9) 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .content {
@@ -15,55 +36,191 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 24px;
 }
 
+/* Greeting */
+.greeting {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* Subtitle - Elegant entrance */
 .subtitle {
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 24px;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    text-shadow: 0 0 20px rgba(210, 43, 43, 0.5);
 }
 
+/* Title - The hero moment */
+/* Title - The hero moment */
 .title {
-    font-size: 5rem;
+    font-size: clamp(3rem, 10vw, 7rem);
     line-height: 1;
-    margin-bottom: 32px;
-    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
     font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    /* Fallback */
+
+    /* Stunning gradient text */
+    background: linear-gradient(135deg,
+            #ffffff 0%,
+            #e0e0e0 50%,
+            #ffffff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Strong glow */
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+
+    /* Animate gradient */
+    animation: gradientShift 8s ease infinite;
+
+    /* Layout */
+    display: flex;
+    gap: 0.1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 20;
 }
 
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.title span {
+    display: inline-block;
+    transform-origin: center;
+}
+
+
+/* Description - Supporting text */
 .description {
-    font-size: 1.1rem;
-    max-width: 500px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 600px;
     color: var(--muted);
     font-weight: 300;
-    margin-bottom: 48px;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* CTA Actions */
 .actions {
     display: flex;
-    gap: 20px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
 }
 
+.actions a {
+    position: relative;
+    overflow: hidden;
+}
+
+.actions a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.actions a:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        margin-bottom: 2rem;
+    }
+
     .title {
-        font-size: 3rem;
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        gap: 0.05em;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
     }
 
     .actions {
         flex-direction: column;
-        gap: 16px;
+        gap: 1rem;
         width: 100%;
         max-width: 300px;
     }
 
-    .btn-primary,
-    .btn-outline {
+    .actions a {
         width: 100%;
-        text-align: center;
+    }
+
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .title {
+        font-size: clamp(4rem, 8vw, 6rem);
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .title {
+        animation: none;
+    }
+
+    .scrollWheel {
+        animation: none;
+    }
+
+    .title span {
+        transform: none !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .subtitle {
+        text-shadow: none;
+    }
+
+    .title {
+        filter: none;
+        background: #ffffff;
+        -webkit-background-clip: text;
+        background-clip: text;
     }
 }

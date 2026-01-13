@@ -107,11 +107,22 @@ export default function PortraitGallery() {
         if (!scrollContainer) return;
 
         const handleWheel = (e: WheelEvent) => {
-            // Only handle horizontal scroll when in the gallery section
-            if (Math.abs(e.deltaY) > 0) {
+            if (Math.abs(e.deltaY) === 0) return;
+
+            const isAtStart = scrollContainer.scrollLeft <= 0;
+            const isAtEnd = scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 1;
+
+            // If scrolling DOWN (deltaY > 0) and NOT at end -> Scroll Right
+            if (e.deltaY > 0 && !isAtEnd) {
                 e.preventDefault();
                 scrollContainer.scrollLeft += e.deltaY;
             }
+            // If scrolling UP (deltaY < 0) and NOT at start -> Scroll Left
+            else if (e.deltaY < 0 && !isAtStart) {
+                e.preventDefault();
+                scrollContainer.scrollLeft += e.deltaY;
+            }
+            // Otherwise, let the page scroll vertically
         };
 
         scrollContainer.addEventListener('wheel', handleWheel, { passive: false });

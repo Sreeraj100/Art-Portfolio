@@ -95,8 +95,8 @@
 }
 
 .frameActive {
-    border-color: var(--accent);
-    background: rgba(138, 11, 11, 0.1);
+    border-color: #25D366;
+    background: rgba(37, 211, 102, 0.1);
 }
 
 .checkbox {
