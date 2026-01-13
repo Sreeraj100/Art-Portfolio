@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "../components/CustomCursor";
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="antialiased bg-background text-foreground overflow-x-hidden">
+        <CustomCursor />
         {children}
       </body>
     </html>

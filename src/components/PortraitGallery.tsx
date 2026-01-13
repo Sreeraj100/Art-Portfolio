@@ -3,10 +3,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { X, ZoomIn, Layers } from 'lucide-react';
+import { X, ZoomIn, Layers, ChevronRight } from 'lucide-react';
 import styles from './PortraitGallery.module.css';
 
 // Extended Data Structure with Multiple Images aka "Details"
+// To use your own images:
+// 1. Place images in 'public/images/gallery'
+// 2. Change src to '/images/gallery/your-file-name.jpg'
 const PORTFOLIO_ITEMS = [
     {
         id: 'soul-gaze',
@@ -85,7 +88,35 @@ const PORTFOLIO_ITEMS = [
 export default function PortraitGallery() {
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [activeImage, setActiveImage] = useState<string | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
+
+    // Detect mobile screen size
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Add horizontal scroll with mouse wheel
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
+
+        const handleWheel = (e: WheelEvent) => {
+            // Only handle horizontal scroll when in the gallery section
+            if (Math.abs(e.deltaY) > 0) {
+                e.preventDefault();
+                scrollContainer.scrollLeft += e.deltaY;
+            }
+        };
+
+        scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
+        return () => scrollContainer.removeEventListener('wheel', handleWheel);
+    }, []);
 
     // ... (keep useEffects same)
 
@@ -161,6 +192,16 @@ export default function PortraitGallery() {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Scroll Indicator */}
+                    <motion.div
+                        className={styles.scrollIndicator}
+                        initial={{ opacity: 0.5, x: 0 }}
+                        animate={{ opacity: [0.5, 1, 0.5], x: [0, 10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                    >
+                        <span>{isMobile ? 'Swipe' : 'Scroll'}</span> <ChevronRight size={16} />
+                    </motion.div>
                 </div>
 
                 {/* Full Screen Modal */}

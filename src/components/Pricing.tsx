@@ -10,9 +10,9 @@ type PortraitType = 'Single' | 'Couple' | 'Family';
 
 // Pricing Matrix (in INR)
 const BASE_PRICES: Record<Size, Record<PortraitType, number>> = {
-    'A4': { 'Single': 2999, 'Couple': 3999, 'Family': 4999 },
-    'A3': { 'Single': 4999, 'Couple': 6499, 'Family': 7999 },
-    'A2': { 'Single': 8999, 'Couple': 11999, 'Family': 14999 },
+    'A4': { 'Single': 999, 'Couple': 1999, 'Family': 2999 },
+    'A3': { 'Single': 1200, 'Couple': 2400, 'Family': 3600 },
+    'A2': { 'Single': 2400, 'Couple': 4800, 'Family': 7200 },
 };
 
 const FRAME_PRICES: Record<Size, number> = {
@@ -24,7 +24,7 @@ const FRAME_PRICES: Record<Size, number> = {
 const WHATSAPP_NUMBER = '919567952537'; // Replace with actual number
 
 export default function Pricing() {
-    const [size, setSize] = useState<Size>('A3');
+    const [size, setSize] = useState<Size>('A4');
     const [type, setType] = useState<PortraitType>('Single');
     const [withFrame, setWithFrame] = useState(false);
 
@@ -34,8 +34,9 @@ export default function Pricing() {
     const totalPrice = basePrice + framePrice;
 
     // Generate WhatsApp Link
+    // Generate WhatsApp Link
     const handleOrder = () => {
-        const text = `Hello Elias! I'd like to commission a portrait.%0A%0A*Order Details:*%0A• Size: ${size}%0A• Type: ${type} Portrait%0A• Framing: ${withFrame ? 'Yes (Premium Frame)' : 'No (Artwork Only)'}%0A%0A*Estimated Price: ₹${totalPrice.toLocaleString()}*%0A%0APlease let me know the next steps.`;
+        const text = `🎨 *Hello Sreeraj!* I'd like to commission a portrait.%0A%0A━━━━━━━━━━━━━━━%0A*📋 ORDER DETAILS*%0A━━━━━━━━━━━━━━━%0A%0A📏 *Size:* ${size}%0A👥 *Type:* ${type} Portrait%0A🖼️ *Framing:* ${withFrame ? '✅ Yes (Premium Frame)' : '❌ No (Artwork Only)'}%0A%0A💰 *Estimated Price:* ₹${totalPrice.toLocaleString()}%0A%0A━━━━━━━━━━━━━━━%0A%0APlease let me know the process to confirm this order! ✨`;
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
     };
 
@@ -102,7 +103,7 @@ export default function Pricing() {
 
                         {/* Framing */}
                         <div className={styles.optionGroup}>
-                            <h3 className={styles.groupTitle}>3. Finishing</h3>
+                            <h3 className={styles.groupTitle}>3. Frame</h3>
                             <div
                                 className={`${styles.frameOption} ${withFrame ? styles.frameActive : ''}`}
                                 onClick={() => setWithFrame(!withFrame)}
