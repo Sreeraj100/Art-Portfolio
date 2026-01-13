@@ -1,0 +1,70 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.links {
+    display: flex;
+    gap: 32px;
+}
+
+.link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+.iconLink {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.iconLink:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+}

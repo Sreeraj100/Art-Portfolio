@@ -1,0 +1,47 @@
+.footer {
+    padding: 60px 0;
+    border-top: 1px solid #222;
+    background-color: var(--background);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+}
+
+.brand h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-family: var(--font-serif);
+}
+
+.brand p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.socials {
+    display: flex;
+    gap: 24px;
+}
+
+.icon {
+    color: var(--foreground);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.copy {
+    color: #444;
+    font-size: 0.8rem;
+}

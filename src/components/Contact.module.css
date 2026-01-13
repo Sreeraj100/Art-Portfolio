@@ -1,0 +1,95 @@
+.contact {
+    background-color: var(--background);
+}
+
+.wrapper {
+    display: flex;
+    gap: 80px;
+}
+
+.info {
+    flex: 1;
+}
+
+.heading {
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.text {
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.detailItem {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.form {
+    flex: 1;
+}
+
+.successMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    min-height: 300px;
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.successMessage h3 {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.successMessage p {
+    color: var(--muted);
+}
+
+.group {
+    margin-bottom: 24px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 16px 0;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: var(--accent);
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.input option {
+    background: var(--background);
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

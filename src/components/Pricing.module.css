@@ -1,0 +1,221 @@
+.pricing {
+    background-color: #0f0f0f;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.heading {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.subtext {
+    color: var(--muted);
+}
+
+.calculatorWrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.optionsPanel {
+    flex: 1.2;
+}
+
+.summaryPanel {
+    flex: 0.8;
+}
+
+.groupTitle {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.optionGroup {
+    margin-bottom: 40px;
+}
+
+.toggles {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.toggleBtn {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid #333;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.toggleBtn:hover {
+    border-color: #666;
+    color: #fff;
+}
+
+.active {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff !important;
+}
+
+.helperText {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 8px;
+}
+
+.frameOption {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.frameOption:hover {
+    border-color: #666;
+}
+
+.frameActive {
+    border-color: var(--accent);
+    background: rgba(138, 11, 11, 0.1);
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.frameInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.frameTitle {
+    font-weight: 500;
+    color: #fff;
+}
+
+.framePrice {
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+/* Summary Card */
+.summaryCard {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 4px;
+    position: sticky;
+    top: 100px;
+    border: 1px solid #333;
+}
+
+.summaryTitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: #fff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 16px;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.divider {
+    height: 1px;
+    background: #333;
+    margin: 24px 0;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.totalPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.whatsappBtn {
+    width: 100%;
+    padding: 16px;
+    background: #25D366;
+    color: #000;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.whatsappBtn:hover {
+    background: #1ebd59;
+}
+
+.secureNote {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+@media (max-width: 900px) {
+    .calculatorWrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .summaryCard {
+        position: relative;
+        top: 0;
+    }
+}
