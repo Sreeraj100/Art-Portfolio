@@ -33,11 +33,32 @@ export default function Pricing() {
     const framePrice = withFrame ? FRAME_PRICES[size] : 0;
     const totalPrice = basePrice + framePrice;
 
+    // Discount Logic
+    const DISCOUNT_PERCENTAGE = 0.15; // 15%
+    const discountAmount = totalPrice * DISCOUNT_PERCENTAGE;
+    const discountedPrice = totalPrice - discountAmount;
+
     // Generate WhatsApp Link
 
     const handleOrder = () => {
-        const text = `🎨 *Hello Sreeraj!* I'd like to commission a portrait.%0A%0A━━━━━━━━━━━━━━━%0A*📋 ORDER DETAILS*%0A━━━━━━━━━━━━━━━%0A%0A📏 *Size:* ${size}%0A👥 *Type:* ${type} Portrait%0A🖼️ *Framing:* ${withFrame ? '✅ Yes (Premium Frame)' : '❌ No (Artwork Only)'}%0A%0A💰 *Estimated Price:* ₹${totalPrice.toLocaleString()}%0A%0A━━━━━━━━━━━━━━━%0A%0APlease let me know the process to confirm this order! ✨`;
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        const text = `🎨 *Hello Sreeraj!* I'd like to commission a portrait.
+
+━━━━━━━━━━━━━━━
+*📋 ORDER DETAILS*
+━━━━━━━━━━━━━━━
+
+📏 *Size:* ${size}
+👥 *Type:* ${type} Portrait
+🖼️ *Framing:* ${withFrame ? '✅ Yes (Premium Frame)' : '❌ No (Artwork Only)'}
+
+💰 *Original Price:* ₹${totalPrice.toLocaleString()}
+🏷️ *Discount (15% OFF):* -₹${discountAmount.toLocaleString()}
+🔥 *Final Price:* ₹${discountedPrice.toLocaleString()}
+
+━━━━━━━━━━━━━━━
+
+Please let me know the process to confirm this order! ✨`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
     };
 
     return (
@@ -131,6 +152,11 @@ export default function Pricing() {
                         <div className={styles.summaryCard}>
                             <h3 className={styles.summaryTitle}>Order Summary</h3>
 
+                            {/* Offer Banner */}
+                            <div className={styles.offerBanner}>
+                                🏷️ Limited Time: 15% OFF Applied!
+                            </div>
+
                             <div className={styles.summaryRow}>
                                 <span>{size} Portrait ({type})</span>
                                 <span>₹{basePrice.toLocaleString()}</span>
@@ -147,7 +173,12 @@ export default function Pricing() {
 
                             <div className={styles.totalRow}>
                                 <span>Total Estimate</span>
-                                <span className={styles.totalPrice}>₹{totalPrice.toLocaleString()}</span>
+                                <div className={styles.priceContainer}>
+                                    <span className={styles.originalPrice}>₹{totalPrice.toLocaleString()}</span>
+                                    <span className={`${styles.totalPrice} ${styles.discountedPrice}`}>
+                                        ₹{discountedPrice.toLocaleString()}
+                                    </span>
+                                </div>
                             </div>
 
                             <p className={styles.note}>

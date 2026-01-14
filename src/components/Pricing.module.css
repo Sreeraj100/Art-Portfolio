@@ -165,10 +165,27 @@
     margin-bottom: 24px;
 }
 
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.originalPrice {
+    text-decoration: line-through;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
 .totalPrice {
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
+}
+
+.discountedPrice {
+    color: #ef4444 !important; /* Red for offer */
 }
 
 .note {
@@ -206,6 +223,23 @@
     text-align: center;
     font-size: 0.8rem;
     color: #444;
+}
+
+/* Offer Banner */
+.offerBanner {
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    color: #25D366;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
 }
 
 @media (max-width: 900px) {
