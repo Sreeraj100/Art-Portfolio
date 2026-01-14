@@ -16,10 +16,10 @@ const PORTFOLIO_ITEMS = [
         title: 'The Soul Gaze',
         category: 'Hyper-Realism',
         year: '2025',
-        src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80',
+        src: '/images/gallery/img-1-main.png',
         details: [
-            'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80'
+            '/images/gallery/img-1-(2).jpg',
+            '/images/gallery/img-1-(3).jpg'
         ],
         description: 'A study of intense emotion and human connection through the eyes. Graphite on Bristol vellum.',
     },
@@ -28,10 +28,10 @@ const PORTFOLIO_ITEMS = [
         title: 'Faded Memories',
         category: 'Surrealism',
         year: '2024',
-        src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80',
+        src: '/images/gallery/img-2-main.png',
         details: [
-            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'
+            '/images/gallery/img-2-(2).jpg',
+            '/images/gallery/img-2-(3).jpg'
         ],
         description: 'Exploring the erosion of time on identity. Charcoal and graphite blend.',
     },
@@ -40,10 +40,9 @@ const PORTFOLIO_ITEMS = [
         title: 'Silent Voice',
         category: 'Portraiture',
         year: '2024',
-        src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80',
+        src: '/images/gallery/img-3-main.png',
         details: [
-            'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'
+            '/images/gallery/img-3-(2).jpg'
         ],
         description: 'Capturing the unspoken words in a single expression. 4B and 8B pencils.',
     },
@@ -52,10 +51,10 @@ const PORTFOLIO_ITEMS = [
         title: 'Eternal Bond',
         category: 'Commission',
         year: '2024',
-        src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80',
+        src: '/images/gallery/img-4-main.jpg',
         details: [
-            'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80'
+            '/images/gallery/img-4-(2).jpg',
+            '/images/gallery/img-4-(3).jpg'
         ],
         description: 'A commissioned piece celebrating a lifelong bond. Detailed texture work on fabric and skin.',
     },
@@ -64,10 +63,10 @@ const PORTFOLIO_ITEMS = [
         title: 'Serenity',
         category: 'Realism',
         year: '2023',
-        src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=80',
+        src: '/images/gallery/img-5-main.png',
         details: [
-            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'
+            '/images/gallery/img-5-(2).jpg',
+            '/images/gallery/img-5-(3).jpg'
         ],
         description: 'Capturing a moment of pure peace. Soft shading techniques used throughout.',
     },
@@ -76,12 +75,33 @@ const PORTFOLIO_ITEMS = [
         title: 'Urban Solitude',
         category: 'Sketch',
         year: '2023',
-        src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80',
+        src: '/images/gallery/img-6-main.png',
         details: [
-            'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80'
+            '/images/gallery/img-6-(2).jpg'
         ],
         description: 'A rougher, sketch-orientated style capturing modern isolation.',
+    },
+    {
+        id: 'classic-elegance',
+        title: 'Classic Elegance',
+        category: 'Classical',
+        year: '2023',
+        src: '/images/gallery/img-7-main.png',
+        details: [
+            '/images/gallery/img-7-(2).jpg'
+        ],
+        description: 'A tribute to classical portraiture techniques with a modern touch.',
+    },
+    {
+        id: 'modern-gaze',
+        title: 'Modern Gaze',
+        category: 'Contemporary',
+        year: '2023',
+        src: '/images/gallery/img-8-main.png',
+        details: [
+            '/images/gallery/img-8-(2).png'
+        ],
+        description: 'Contemporary style focusing on sharp contrasts and bold lines.',
     }
 ];
 
