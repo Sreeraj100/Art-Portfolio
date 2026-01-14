@@ -136,3 +136,8 @@ button {
     padding: 80px 0;
   }
 }
+
+/* Utility to hide navbar when gallery is open */
+body.gallery-open #main-navbar {
+  display: none !important;
+}

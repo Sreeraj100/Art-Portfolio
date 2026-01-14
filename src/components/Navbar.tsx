@@ -19,6 +19,7 @@ export default function Navbar() {
 
     return (
         <motion.nav
+            id="main-navbar"
             className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}

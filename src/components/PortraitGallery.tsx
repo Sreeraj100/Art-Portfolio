@@ -110,7 +110,7 @@ const PORTFOLIO_ITEMS = [
         year: '2023',
         src: '/images/gallery/img-9-main.jpg',
         details: [
-           
+
         ],
         description: 'Contemporary style focusing on sharp contrasts and bold lines.',
     }
@@ -162,18 +162,28 @@ export default function PortraitGallery() {
 
     // ... (keep useEffects same)
 
-    // Lock body scroll when modal is open
+    // Lock body scroll and hide navbar via class when modal is open
     useEffect(() => {
         if (selectedId) {
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+            document.body.classList.add('gallery-open'); // Hide navbar via CSS
+
             // Set initial active image
             const item = PORTFOLIO_ITEMS.find(i => i.id === selectedId);
             if (item) setActiveImage(item.src);
         } else {
             document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+            document.body.classList.remove('gallery-open');
+
             setActiveImage(null);
         }
-        return () => { document.body.style.overflow = 'unset'; };
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+            document.body.classList.remove('gallery-open');
+        };
     }, [selectedId]);
 
     // Handle Escape Key

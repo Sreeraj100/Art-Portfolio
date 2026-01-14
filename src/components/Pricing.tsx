@@ -34,7 +34,7 @@ export default function Pricing() {
     const totalPrice = basePrice + framePrice;
 
     // Generate WhatsApp Link
-    // Generate WhatsApp Link
+
     const handleOrder = () => {
         const text = `🎨 *Hello Sreeraj!* I'd like to commission a portrait.%0A%0A━━━━━━━━━━━━━━━%0A*📋 ORDER DETAILS*%0A━━━━━━━━━━━━━━━%0A%0A📏 *Size:* ${size}%0A👥 *Type:* ${type} Portrait%0A🖼️ *Framing:* ${withFrame ? '✅ Yes (Premium Frame)' : '❌ No (Artwork Only)'}%0A%0A💰 *Estimated Price:* ₹${totalPrice.toLocaleString()}%0A%0A━━━━━━━━━━━━━━━%0A%0APlease let me know the process to confirm this order! ✨`;
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');

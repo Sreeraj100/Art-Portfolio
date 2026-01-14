@@ -120,24 +120,7 @@
 }
 
 .viewBtn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 8px 20px;
-    background: transparent;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-}
-
-.viewBtn:hover {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
+    display: none;
 }
 
 /* Modal Overlay */
@@ -147,19 +130,24 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 2000;
-    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    /* Higher than Navbar */
+    background: #000000;
+    /* Solid opacity to hide navbar */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 0;
+    /* Full screen */
 }
 
 .modalCard {
     width: 100%;
-    max-width: 1200px;
-    height: 90vh;
-    background: #0a0a0a;
+    max-width: 100%;
+    /* Minimize card constraints */
+    height: 100vh;
+    /* Full height */
+    background: #000;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -167,25 +155,31 @@
 }
 
 .closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    /* Left aligned */
+    right: auto;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
 }
 
 .closeBtn:hover {
-    background: var(--accent);
+    background: #fff;
+    color: #000;
+    transform: scale(1.1);
 }
 
 /* Modal Content Layout */
@@ -253,11 +247,10 @@
 
     .closeBtn {
         top: 16px;
-        right: 16px;
+        left: 16px;
+        right: auto;
         background: rgba(0, 0, 0, 0.8);
-        /* Darker background for visibility */
         width: 44px;
-        /* Touch target size */
         height: 44px;
     }
 
