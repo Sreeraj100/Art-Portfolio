@@ -102,6 +102,17 @@ const PORTFOLIO_ITEMS = [
             '/images/gallery/img-8-(2).png'
         ],
         description: 'Contemporary style focusing on sharp contrasts and bold lines.',
+    },
+    {
+        id: 'modern',
+        title: 'Modern Gaze',
+        category: 'Contemporary',
+        year: '2023',
+        src: '/images/gallery/img-9-main.jpg',
+        details: [
+           
+        ],
+        description: 'Contemporary style focusing on sharp contrasts and bold lines.',
     }
 ];
 
