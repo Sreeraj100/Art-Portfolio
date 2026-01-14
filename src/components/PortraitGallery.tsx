@@ -12,107 +12,77 @@ import styles from './PortraitGallery.module.css';
 // 2. Change src to '/images/gallery/your-file-name.jpg'
 const PORTFOLIO_ITEMS = [
     {
-        id: 'soul-gaze',
-        title: 'The Soul Gaze',
-        category: 'Hyper-Realism',
-        year: '2025',
+        id: '1',
+        src: '/images/gallery/img-main.png',
+        details: [
+            '/images/gallery/img-1.jpeg',
+            '/images/gallery/img-2.jpeg'
+        ]
+    },
+    {
+        id: '2',
         src: '/images/gallery/img-1-main.png',
         details: [
             '/images/gallery/img-1-(2).jpg',
             '/images/gallery/img-1-(3).jpg'
-        ],
-        description: 'A study of intense emotion and human connection through the eyes. Graphite on Bristol vellum.',
+        ]
     },
     {
-        id: 'faded-memories',
-        title: 'Faded Memories',
-        category: 'Surrealism',
-        year: '2024',
+        id: '3',
         src: '/images/gallery/img-2-main.png',
         details: [
             '/images/gallery/img-2-(2).jpg',
             '/images/gallery/img-2-(3).jpg'
-        ],
-        description: 'Exploring the erosion of time on identity. Charcoal and graphite blend.',
+        ]
     },
     {
-        id: 'silent-voice',
-        title: 'Silent Voice',
-        category: 'Portraiture',
-        year: '2024',
+        id: '4',
         src: '/images/gallery/img-3-main.png',
         details: [
             '/images/gallery/img-3-(2).jpg'
-        ],
-        description: 'Capturing the unspoken words in a single expression. 4B and 8B pencils.',
+        ]
     },
     {
-        id: 'eternal-bond',
-        title: 'Eternal Bond',
-        category: 'Commission',
-        year: '2024',
+        id: '5',
         src: '/images/gallery/img-4-main.jpg',
         details: [
             '/images/gallery/img-4-(2).jpg',
             '/images/gallery/img-4-(3).jpg'
-        ],
-        description: 'A commissioned piece celebrating a lifelong bond. Detailed texture work on fabric and skin.',
+        ]
     },
     {
-        id: 'serenity',
-        title: 'Serenity',
-        category: 'Realism',
-        year: '2023',
+        id: '6',
         src: '/images/gallery/img-5-main.png',
         details: [
             '/images/gallery/img-5-(2).jpg',
             '/images/gallery/img-5-(3).jpg'
-        ],
-        description: 'Capturing a moment of pure peace. Soft shading techniques used throughout.',
+        ]
     },
     {
-        id: 'urban-solitude',
-        title: 'Urban Solitude',
-        category: 'Sketch',
-        year: '2023',
+        id: '7',
         src: '/images/gallery/img-6-main.png',
         details: [
             '/images/gallery/img-6-(2).jpg'
-        ],
-        description: 'A rougher, sketch-orientated style capturing modern isolation.',
+        ]
     },
     {
-        id: 'classic-elegance',
-        title: 'Classic Elegance',
-        category: 'Classical',
-        year: '2023',
+        id: '8',
         src: '/images/gallery/img-7-main.png',
         details: [
             '/images/gallery/img-7-(2).jpg'
-        ],
-        description: 'A tribute to classical portraiture techniques with a modern touch.',
+        ]
     },
     {
-        id: 'modern-gaze',
-        title: 'Modern Gaze',
-        category: 'Contemporary',
-        year: '2023',
+        id: '9',
         src: '/images/gallery/img-8-main.png',
         details: [
             '/images/gallery/img-8-(2).png'
-        ],
-        description: 'Contemporary style focusing on sharp contrasts and bold lines.',
+        ]
     },
     {
-        id: 'modern',
-        title: 'Modern Gaze',
-        category: 'Contemporary',
-        year: '2023',
+        id: '10',
         src: '/images/gallery/img-9-main.jpg',
-        details: [
-
-        ],
-        description: 'Contemporary style focusing on sharp contrasts and bold lines.',
+        details: []
     }
 ];
 
@@ -232,7 +202,7 @@ export default function PortraitGallery() {
                                 <div className={styles.imageWrapper}>
                                     <Image
                                         src={item.src}
-                                        alt={item.title}
+                                        alt={item.id}
                                         fill
                                         className={styles.image}
                                         sizes="(max-width: 768px) 80vw, 400px"
